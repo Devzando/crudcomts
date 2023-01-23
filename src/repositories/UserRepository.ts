@@ -3,16 +3,31 @@ import { QueryBuilder, Repository } from 'typeorm';
 
 import { User } from "../entities/User"
 
+const query = connectionDb.createQueryBuilder()
 
-export const UserRepository = connectionDb.getRepository(User).extend({
-    findByName(firstName: string, lastName: string) {
-        return this.createQueryBuilder("user")
-            .where("user.firstName = :firstName", { firstName })
-            .andWhere("user.lastName = :lastName", { lastName })
-            .getMany()
-    },
-})
 
-export default UserRepository;
+interface IUserRepositoryDto {
+    name: string
+    idade: number
+}
+
+interface IUserRepository {
+    createNewUser(data: IUserRepositoryDto): Promise<User>
+}
+
+// class UserRepository implements 
+
+// const UserRepository = connectionDb.getRepository(User).extend({
+//     async createUser(name: string, idade: number) {
+//         return query.insert().into(User).values({
+//             name,
+//             idade
+//         })
+
+            
+//     },
+// })
+
+// export default UserRepository;
 
 

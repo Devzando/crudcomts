@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --transpile-only src/server.ts",
-    "typeorm": "typeorm-ts-node-esm",
+    "typeorm": "typeorm-ts-node-esm ",
     "migration:run": "typeorm-ts-node-esm -d src/database/connection.ts migration:run"
   },
   "keywords": [],
