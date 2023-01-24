@@ -3,10 +3,7 @@ import { Repository } from 'typeorm';
 
 import { User } from "../entities/User"
 
-interface IUserCreateDto {
-    name: string
-    idade: number
-}
+import { IUserCreateDto } from '../dtos/UserRepositoryDto'
 
 interface IUserRepository {
     createNewUser(data: IUserCreateDto): Promise<User>
